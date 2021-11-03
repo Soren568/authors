@@ -25,7 +25,7 @@ export default props => {
     const updateAuthor =(e, author )=> {
         e.preventDefault();
         axios.put('http://localhost:8000/api/authors/' + id, author)
-        .then(res => console.log(res), history.push('/'))
+        .then(res => console.log(res))
         .catch(err => {
             console.error("THIS IS AN ERROR", err)
             const errorResponse = err.response.data.error.errors; 

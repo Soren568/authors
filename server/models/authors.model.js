@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 const AuthorSchema = new mongoose.Schema({
     name: { 
         type: String,
-        required: [true, "The author must have a name."]
+        required: [true, "The author must have a name."],
+        minlength: [3, "Author name must be at least 3 characs"]
     },
     books: { 
         type: Array,

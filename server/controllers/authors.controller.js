@@ -22,7 +22,7 @@ module.exports.createAuthor = (req, res) =>{
 module.exports.updateAuthor = (req, res) => {
     Author.findOneAndUpdate({ _id: req.params.id}, req.body, {new: true})
     .then(updatedAuthor => res.json({author: updatedAuthor}))
-    .catch(err => res.json({message: "Something went wrong", error: err}));
+    .catch(err => res.status(400).json({error: err}));
 }
 
 module.exports.deleteAuthor = (req, res) => {

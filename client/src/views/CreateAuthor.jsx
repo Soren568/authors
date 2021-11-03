@@ -17,7 +17,7 @@ export default props => {
         e.preventDefault();
         axios.post('http://localhost:8000/api/authors', author)
         // HISTORY PUSH NO MATTER WHAT 
-            .then(res => console.log("CREATION SUCCESS", res), history.push('/'))
+            .then(res => {console.log("CREATION SUCCESS", res); history.push('/')})
             .catch(err => {
                 console.error(err.response.data.error.errors)
                 const errorResponse = err.response.data.error.errors;
